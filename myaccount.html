@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Details</title>
+    <style>
+        /* Basic styling for the body */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Tab container */
+        .tab-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        /* Tab links */
+        .tab-links {
+            display: flex;
+            background-color: #333;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .tab-links button {
+            background-color: #333;
+            color: white;
+            padding: 14px 20px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .tab-links button:hover {
+            background-color: #575757;
+        }
+
+        /* Active tab styling */
+        .tab-links button.active {
+            background-color: #ff7e5f;
+        }
+
+        /* Tab content */
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 0 0 10px 10px;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .profile-info {
+            margin-bottom: 15px;
+        }
+
+        .profile-info label {
+            font-weight: bold;
+        }
+
+        .profile-info p {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .profile-img img ="{
+            max-width: 150px;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Tab links -->
+    <div class="tab-container">
+        <div class="tab-links">
+            <button class="tab-button" onclick="showTab('name')">Name</button>
+            <button class="tab-button active" onclick="showTab('profile')">Profile Picture</button>
+            <button class="tab-button" onclick="showTab('age')">My Orders</button>
+            <button class="tab-button" onclick="showTab('dob')">DOB</button>
+            <button class="tab-button" onclick="showTab('mobile')">Mobile Number</button> 
+                     
+        </div>
+    </div>
+
+    <!-- Tab content -->
+    <div id="profile" class="tab-content active">
+        <div class="profile-img">
+            <img src=https://img.lovepik.com/element/45001/3052.png_860.png alt="Profile Picture" width="150px"> 
+        </div>
+    </div>
+    <div id="age" class="tab-content">
+        <div class="profile-info">
+            <label for="Orders">My Orders:</label>
+            <p>ORDER HISTORY</p>
+        </div>
+    </div>
+    <div id="dob" class="tab-content">
+        <div class="profile-info">
+            <label for="dob">Date of Birth:</label>
+            <p>January 1, 1994</p>
+        </div>
+    </div>
+    <div id="mobile" class="tab-content">
+        <div class="profile-info">
+            <label for="mobile">Mobile Number:</label>
+            <p>+1 234 567 890</p>
+        </div>
+    </div>
+    <div id="name" class="tab-content">
+        <div class="profile-info">
+            <label for="name">Name:</label>
+            <p>P VATSALYA</p>
+        </div>
+    </div>
+    <a href="/myaccount"></a>
+
+    <script>
+        
+        function showTab(tabId) {
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => content.classList.remove('active'));
+
+            const tabButtons = document.querySelectorAll('.tab-button');
+            tabButtons.forEach(button => button.classList.remove('active'));
+
+            document.getElementById(tabId).classList.add('active');
+
+            const activeButton = document.querySelector(`button[onclick="showTab('${tabId}')"]`);
+            activeButton.classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
